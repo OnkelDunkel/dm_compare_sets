@@ -10,7 +10,8 @@ public class Main {
     }
     public static int compareSets(int[] A, int[] B) {
 
-        if (A.length < B.length) {
+        if (Arrays.equals(A,B)) return 0;
+        else if (A.length < B.length) {
             boolean allInB = true;
             for (int i:A) {
                 if (!existsInArr(i, B)) allInB = false;
@@ -23,13 +24,6 @@ public class Main {
                 if (!existsInArr(i, A)) allInA = false;
             }
             if (allInA) return 1;
-        }
-        else {
-            boolean allInA = true;
-            for (int i:B) {
-                if (!existsInArr(i, A)) allInA = false;
-            }
-            if (allInA) return 0;
         }
         return -2;
     }
